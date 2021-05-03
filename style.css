@@ -1,0 +1,46 @@
+/**GENERAL**/
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 50px 50px 55px 50px;
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+}
+/**HEADER**/
+#main{
+    display: flex;
+    flex-direction: column;
+}
+#header{
+    height: 130px;
+    display: flex;
+    justify-content: space-between;
+}
+nav ul{
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    margin-bottom: 66px;
+}
+.menu-hebergement{
+    margin-right: 67px;
+    color: #0065FC;
+}
+.menu-activites{
+    margin-right: 67px;
+    color: #000000;
+}
+.menu-inscription{
+    margin-right: 27px;
+    color: #0065FC;
+}
+/**RECHERCHE HEBERGEMENT**/
+.titre-gras{
+    font-weight: bold;
+}
+.emplacement{
+    line-height: 1.6em;
+}
+
+
