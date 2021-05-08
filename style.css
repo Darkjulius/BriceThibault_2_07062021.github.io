@@ -1,12 +1,15 @@
 /**GENERAL**/
-*{
+body{
     margin: 0;
     padding: 0;
     font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    border: 1px solid black;
 }
-/**HEADER**/
+/************************************************/
+/********************HEADER**********************/
+/************************************************/
 #main{
-    margin: 50px 50px 0px 50px;
+    margin: 42.52px;
     display: flex;
     flex-direction: column;
 }
@@ -15,7 +18,8 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    height: 8.8vh;/*81px*/
+    height: 42.52px;
+    margin-bottom: 42.52px;
 }
 nav ul {
     display: flex;
@@ -24,27 +28,27 @@ nav ul {
     list-style-type: none;
 }
 .menu-hebergement{
-    margin-right: 67px;
+    margin-right: 63.78px;
     color: #0065FC;
     text-decoration: none;
 }
 .menu-activites{
-    margin-right: 67px;
+    margin-right: 63.78px;
     color: #000000;
     text-decoration: none;
 }
 .menu-inscription{
-    margin-right: 27px;
+    margin-right: 35.43px;
     color: #0065FC;
     text-decoration: none;
 }
 /**RESPONSIVE HEADER**/
-@media screen and (min-width: 320px) and (max-width: 576px) /*Ecrans inférieurs à 480px (téléphones)*/{
+@media screen and (min-width: 320px) and (max-width: 576px)/*Mobile et tablette */{
     #main{
-        margin: 33px 21px 0px 21px ;
+        margin: 28.35px 14.17px 42.52px 14.17px ;
     }
     #header{
-        height: 14.89vh;/*137px*/
+        height: 92.13px;
         position: relative;
         z-index: 2;
     }
@@ -53,18 +57,18 @@ nav ul {
         z-index: 3;
     }
     nav ul{
-        height: 14.89vh;
-        width: 100%;
+        width: 90.7%;
         position: absolute;
         z-index: 4;
         flex-direction: column;
+        padding-left: 20px;
     }
     .inscription{
         position: relative;
         z-index: 1;
         align-self: flex-end;
         order: -1;
-        margin-bottom: 16px;
+        margin-bottom: 37px;
     }
     .activites{
         position: absolute;
@@ -73,15 +77,76 @@ nav ul {
     }
     .hebergement{
         align-self: flex-start;
-        margin-left: 20px;
+        margin-left: 0px;
     }
     .menu-inscription{
         margin-right: 0px;
     }
     .menu-activites{
-        margin-right: 43px;
+        margin-right: 45px;
     }
     .menu-hebergement{
         margin-right: 0px;
     }
+}
+/***************************************************/
+/********************RECHERCHE**********************/
+/***************************************************/
+.titre-gras-recherche{
+    font-size: 20px;
+    font-weight: bold;
+}
+.champ-rechercher{
+    margin-top: 18px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+.icone-map{
+    height: 50px;
+    width: 52.30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-color: #F2F2F2;
+}
+input[type="text"]{
+    height: 50px;
+    width: 234px;
+    outline-style: none;
+    border: none;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #F2F2F2;
+    border-bottom: 1px solid #F2F2F2;
+    font-weight: bold;
+}
+.bouton{
+    height: 50px;
+    width: 131.84px;
+    background-color:#0065FC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: #fff;
+    font-weight: bold;
+}
+.titre-gras-filtres{
+    font-weight: bold;
+}
+/***************************************************/
+/*********************FILTRES***********************/
+/***************************************************/
+#filtres{
+    margin-top: 50px;
+    display: flex;
+}
+.economique ,.familial, .coeur ,.dog{
+    display: flex;
 }
