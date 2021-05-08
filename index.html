@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0f825b8ab5.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
@@ -17,9 +18,9 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="#hebergement" class="menu-hebergement">Hébergements</a></li>
-                        <li><a href="#activites" class="menu-activites">Activités</a></li>
-                        <li><a href="#inscription" class="menu-inscription">S'inscrire</a></li>
+                        <li class="hebergement"><a href="#hebergement" class="menu-hebergement">Hébergements</a></li>
+                        <li class="activites"><a href="#activites" class="menu-activites">Activités</a></li>
+                        <li class="inscription"><a href="#inscription" class="menu-inscription">S'inscrire</a></li>
                     </ul>
                 </nav>
             </div>
@@ -27,7 +28,19 @@
         <div id="recherche">
             <span class="titre-gras">Trouvez votre hébergement pour des vacances de rêve</span><br>
             <span class="emplacement">En plein centre ville ou en pleine nature</span>
+            <div class="button-search">
+                <div class="icone-map">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                    <input type="text" id="text-search">
+                </div>
+                <div class="button">Rechercher</div>
+
+            </div>
         </div>
+        
+
 
 
 
