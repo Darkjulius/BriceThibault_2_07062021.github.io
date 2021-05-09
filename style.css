@@ -3,7 +3,17 @@ body{
     margin: 0;
     padding: 0;
     font-family: 'Raleway', Arial, Helvetica, sans-serif;
-    border: 1px solid black;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+p{
+    margin: 0px;
+}
+h1 ,h2, h3{
+    margin: 0px;
+    font-size: 22px;
 }
 /************************************************/
 /********************HEADER**********************/
@@ -43,7 +53,7 @@ nav ul {
     text-decoration: none;
 }
 /**RESPONSIVE HEADER**/
-@media screen and (min-width: 320px) and (max-width: 576px)/*Mobile et tablette */{
+@media screen and (min-width: 320px) and (max-width: 576px){
     #main{
         margin: 28.35px 14.17px 42.52px 14.17px ;
     }
@@ -92,10 +102,6 @@ nav ul {
 /***************************************************/
 /********************RECHERCHE**********************/
 /***************************************************/
-.titre-gras-recherche{
-    font-size: 20px;
-    font-weight: bold;
-}
 .champ-rechercher{
     margin-top: 18px;
     height: 50px;
@@ -117,12 +123,13 @@ input[type="text"]{
     width: 234px;
     outline-style: none;
     border: none;
-    padding: 0px;
+    padding: 0px 0px 0px 17px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-top: 1px solid #F2F2F2;
     border-bottom: 1px solid #F2F2F2;
+    font-size: 16px;
     font-weight: bold;
 }
 .bouton{
@@ -137,16 +144,189 @@ input[type="text"]{
     color: #fff;
     font-weight: bold;
 }
-.titre-gras-filtres{
-    font-weight: bold;
+@media screen and (min-width: 320px) and (max-width: 576px){
+    .champ-rechercher{
+        width: 100%;
+    }
+    input[type="text"]{
+        width: 229px;
+    }
+    .bouton{
+        width: 52px;
+        border-radius: 15px;
+    }
 }
 /***************************************************/
 /*********************FILTRES***********************/
 /***************************************************/
+.titre-gras-filtres{
+    font-weight: bold;
+    margin-right: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 #filtres{
-    margin-top: 50px;
+    display: flex;
+    margin-top: 35px;
+}
+.bouton-economique{
+    display: flex;
+    margin-right: 25px;
+    border: 2px solid #F2F2F2;
+    border-radius: 30px;
+}
+.bouton-familial{
+    display: flex;
+    margin-right: 25px;
+    border: 2px solid #F2F2F2;
+    border-radius: 30px;
+}
+.bouton-romantique{
+    display: flex;
+    margin-right: 25px;
+    border: 2px solid #F2F2F2;
+    border-radius: 30px;
+}
+.bouton-dog{
+    display: flex;
+    margin-right: 25px;
+    border: 2px solid #F2F2F2;
+    border-radius: 30px;
+}
+.icone-filtre{
+    width: 46px;
+    height: 46px;
+    border-radius: 30px;
+    background-color: #deebff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.economique, .familial, .romantique, .dog{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+.economique{
+    width: 141px;
+}
+.familial{
+    width: 102px;
+}
+.romantique{
+    width: 136px;
+}
+.dog{
+    width: 192px;
+}
+.bouton-economique:hover{
+    background-color: #f2f2f2;
+    cursor: pointer;
+}
+.bouton-familial:hover{
+    background-color: #f2f2f2;
+    cursor: pointer;
+}
+.bouton-romantique:hover{
+    background-color: #f2f2f2;
+    cursor: pointer;
+}
+.bouton-dog:hover{
+    background-color: #f2f2f2;
+    cursor: pointer;
+}
+@media screen and (min-width: 320px) and (max-width: 576px){
+    #filtres{
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 1;
+    }
+    .titre-gras-filtres{
+        justify-content: flex-start;
+        margin-bottom: 22px;
+    }
+    .bouton-economique{
+        position: absolute;
+        z-index: 2;
+        margin-top: 50px;
+    }
+    .economique{
+        width: 128px;
+    }
+    .bouton-romantique{
+        position: absolute;
+        z-index: 3;
+        margin-top: 110px;
+    }
+    .romantique{
+        width: 120px;
+    }
+    .bouton-dog{
+        position: absolute;
+        z-index: 4;
+        margin-top: 170px;
+        margin-bottom: 31px;
+    }
+    .dog{
+        width: 167px;
+    }
+    .bouton-familial{
+        position: absolute;
+        z-index: 5;
+        margin-top: 50px;
+        margin-left: 190px;
+    }
+    .familial{
+        width: 90px;
+    }
+}
+/*****************************************************/
+/*********************RESULTATS***********************/
+/*****************************************************/
+#resultats .resultat{
     display: flex;
 }
-.economique ,.familial, .coeur ,.dog{
+.resultat{
+    margin-top: 33px;
+}
+.icone-resultat{
+    width: 22px;
+    height: 22px;
+    margin-right: 14px;
+    border: 2px solid #F2F2F2;
+    border-radius: 30px;
+    background-color: #fff;
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.texte-resultat{
+    display: flex;
+    align-items: center;
+}
+@media screen and (min-width: 320px) and (max-width: 576px){
+    .resultat{
+        margin-top: 210px;
+    }
+}
+/********************************************************/
+/*********************HEBERGEMENTS***********************/
+/********************************************************/
+#hebergements{
+    margin-top: 39px;
+    display: flex;
+}
+.hebergements-marseille{
+    padding-top: 49px;
+    background-color: #F2F2F2;
+}
+.hebergement-ligne1, .hebergement-ligne2{
+    display: flex;
+}
+.carte{
+    border-radius: 20px;
+    background-color: #fff;
+    padding: 10px;
 }
