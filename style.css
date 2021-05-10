@@ -11,15 +11,19 @@ a{
 p{
     margin: 0px;
 }
-h1 ,h2, h3{
+h1 ,h2{
     margin: 0px;
     font-size: 22px;
+}
+h3{
+    margin: 0px;
+    font-size: 16px;
 }
 /************************************************/
 /********************HEADER**********************/
 /************************************************/
 #main{
-    margin: 42.52px;
+    margin: 49.61px 49.61px 53.70px 49.61px;
     display: flex;
     flex-direction: column;
 }
@@ -55,7 +59,7 @@ nav ul {
 /**RESPONSIVE HEADER**/
 @media screen and (min-width: 320px) and (max-width: 576px){
     #main{
-        margin: 28.35px 14.17px 42.52px 14.17px ;
+        margin: 28.35px 19px 49.61px 19px ;
     }
     #header{
         height: 92.13px;
@@ -319,14 +323,78 @@ input[type="text"]{
     display: flex;
 }
 .hebergements-marseille{
-    padding-top: 49px;
+    width: 808px;
+    height: 531px;
+    border-radius: 15px;
+    padding: 47px 40px 47px 40px;
+    margin-right: 40px;
     background-color: #F2F2F2;
 }
 .hebergement-ligne1, .hebergement-ligne2{
     display: flex;
 }
+.hebergement-ligne1{
+    margin-top: 22px;
+}
+.hebergement-ligne3{
+    margin-bottom:8px;
+}
 .carte{
     border-radius: 20px;
     background-color: #fff;
-    padding: 10px;
+    margin-right: 31px;
+    margin-bottom: 31px;
+    padding: 8px;
+}
+.carte-mouettes{
+    border-radius: 20px;
+    background-color: #fff;
+    margin-bottom: 31px;
+    margin-right: 31px;
+    padding: 8px;
+}
+.carte-amina{
+    border-radius: 20px;
+    background-color: #fff;
+    margin-right: 35px;
+    margin-bottom: 31px;
+    padding: 8px;
+}
+.img-hebergements img{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin-bottom: 8px;
+}
+.carte-esp{
+    margin-bottom: 8px;
+}
+.afficher{
+    font-weight: bold;
+}
+/***************************************************************/
+/*********************LES PLUS POPULAIRES***********************/
+/***************************************************************/
+.populaire{
+    width: 415.14px;
+    border-radius: 15px;
+    padding: 49px 35px 46px 35px;
+    background-color: #F2F2F2;
+}
+.titre{
+    display: flex;
+}
+.carte-pop-soleilMatin{
+    display: flex;
+    border-radius: 20px;
+    background-color: #fff;
+    margin-top: 22px;
+    margin-bottom: 28px;
+    padding: 8px;
+}
+.carte-pop{
+    display: flex;
+    border-radius: 20px;
+    background-color: #fff;
+    margin-bottom: 25px;
+    padding: 8px;
 }
