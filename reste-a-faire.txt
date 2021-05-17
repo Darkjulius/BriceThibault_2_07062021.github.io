@@ -1,0 +1,6 @@
+Reste à faire
+ajouter des margin à Reservia, s'inscrire faire un margin.
+trait surligné en dessous d'hébergement dans la mquette iphone
+mettre une margin top au-dessus du footer
+positionner les images en bg pour la section activités.
+
