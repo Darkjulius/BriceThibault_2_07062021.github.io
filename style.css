@@ -7,175 +7,283 @@
 body{
     font-family: 'Raleway', Arial, Helvetica, sans-serif;
 }
-#main{
-    margin: 52px 50px 55px 50px;
+h2{
+    font-size: 18px;
 }
-/************************* RESPONSIVE *************************/
-/************************** GENERAL ***************************/
-/* Maquette Iphone8 */
-@media screen and (min-width: 375px) and (max-width: 375px){
-    #main{
-        margin: 32px 0px 49px 0px;
-    }
-}
+/**********************************************************/
 /************************* HEADER *************************/
-header{
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    height: 79px;
+#header{
+    display: grid;
+    grid-template-columns: 1fr 7fr 1.5fr 0.25fr 1.5fr 0.25fr 1fr 0.25fr;
+    grid-template-rows: 132px;
+    grid-template-areas: "logo . nav-hebergement . nav-activites . nav-inscription";
 }
-.logo-reservia img{
+.header-logo{
     display: flex;
+    grid-area: logo;
 }
-.nav .menu{
+.header-nav-hebergement{
     display: flex;
-    justify-content: flex-end;
-    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+    grid-area: nav-hebergement;
+    padding: 0 10px;
+    border-top: 2px solid #0065fc;
+}
+.header-nav-activites{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: nav-activites;
+}
+.header-nav-inscription{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    grid-area: nav-inscription;
+}
+.header-nav-hebergement a:hover, .header-nav-activites a:hover, .header-nav-inscription a:hover{
+    color: #0065fc;
+    font-weight: bold;
 }
 .nav-hebergement{
-    margin-right: 67px;
     color: #0065fc;
     text-decoration: none;
 }
 .nav-activites{
-    margin-right: 68px;
     color: #000;
     text-decoration: none;
 }
 .nav-inscription{
-    margin-right: 27px;
     color:#0065fc;
     text-decoration: none;
-    font-weight: bold;
 }
-/************************* RESPONSIVE *************************/
-/************************** HEADER ***************************/
-/* Maquette Iphone8 */
-@media screen and (min-width: 375px) and (max-width: 375px){
-    header{
-        height: 136px;
-        position: relative;
-        z-index: 1;
+/** RESPONSIVE HEADER - MOBILE **/
+@media screen and (min-width: 320px) and (max-width: 768px){
+    #header{
+        grid-template-columns: 0.75fr 0.75fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+        "logo nav-inscription"
+        "nav-hebergement nav-activites";
     }
-    .logo-reservia img{
-        position: absolute;
-        z-index: 2;
+    .header-logo{
+        padding-left: 12%;
     }
-    .nav .menu{
-        height: 136px;
-        width: auto;
-        padding-top: 17px;
-        flex-flow: row wrap-reverse;
+    .header-nav-hebergement{
+        grid-area: nav-hebergement;
+        border-top: 0;
+        border-bottom: 2px solid #0065fc;
     }
-    .nav-hebergement{
-        margin-right: 140px;
+    .header-nav-activites{
+        grid-area: nav-activites;
     }
-    .nav-inscription{
-        margin-right: 0px;
-    }
-    .nav-activites{
-        margin-right: 44px;
+    .header-nav-inscription{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        grid-area: nav-inscription;
+        padding-right: 12%;
     }
 }
-/* TABLETTE */
-@media screen and (min-width: 769px) and (max-width: 991px){
-    header{
-        height: 50%;
+/** RESPONSIVE HEADER - TABLETTE **/
+@media screen and (min-width: 769px) and (max-width: 1024px){
+    #header{
+        grid-template-columns: 0.75fr 0.75fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+        "logo nav-inscription"
+        "nav-hebergement nav-activites";
+    }
+    .header-logo{
+        padding-left: 12%;
+    }
+    .header-nav-hebergement{
+        grid-area: nav-hebergement;
+        border-top: 0;
+        border-bottom: 2px solid #0065fc;
+    }
+    .header-nav-activites{
+        grid-area: nav-activites;
+    }
+    .header-nav-inscription{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        grid-area: nav-inscription;
+        padding-right: 12%;
     }
 }
-/************************* RECHERCHE *************************/
-#recherche{
-    height: 118px;
-}
-#recherche h1{
-    line-height: 32px;
-}
-.texte-recherche{
-    line-height: 16px;
-    margin-bottom: 19px;
-}
-.champ-recherche{
+/*********************************************************************/
+/************************* SECTION RECHERCHE *************************/
+#search-hebergement{
     display: flex;
-    align-items: center;
-    height: 51px;
-    width: 420px;
+    flex-direction: column;
 }
-.icone-map{
-    width: 52px;
-    height: 51px;
+.search-text{
+    margin-top: 12px;
+}
+.search-barre{
+    display: flex;
+    margin-top: 20px;;
+}
+.search-icone-map{
     display: flex;
     justify-content: center;
     align-items: center;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
+    border-top: 1px solid #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;
+    width: 3%;
+    height: 52px;
     background-color: #f2f2f2;
 }
+.search-barre-texte{
+    width: 15%;
+}
 input[type="text"]{
-    width: 234px;
-    height: 51px;
-    outline-style: none;
-    border: none;
-    padding: 0 0 0 17px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-top: 1px solid #f2f2f2;
     border-bottom: 1px solid #f2f2f2;
+    outline-style: none;
+    border: none;
+    width: 234px;
+    height: 51px;
+    padding: 0 0 0 17px;
     font-size: 16px;
     font-weight: bold;
 }
-.bouton{
-    height: 51px;
-    width: 134px;
-    background-color: #0065fc;
+.search-button{
     display: flex;
     justify-content: center;
     align-items: center;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    color: #fff;
+    height: 51px;
+    width: 134px;
     font-weight: bold;
     cursor: pointer;
+    color: #fff;
+    background-color: #0065fc;
 }
 /* Je masque l'icône loupe en Desktop */
-.icone-loupe{
+.search-icone-loupe{
     display: none;
 }
-/************************* RESPONSIVE *************************/
-/************************** RECHERCHE ***************************/
-/* Maquette Iphone8 */
-@media screen and (min-width: 375px) and (max-width: 375px){
-    #recherche{
-        height: 165px;
+
+/* filtres */
+.search-filters{
+    display: flex;
+    align-items: center;
+    margin-top: 31px;
+}
+.search-filters h2{
+    margin-right: 2%;
+}
+.search-filters-container{
+    display: flex;
+}
+.search-filter-icone{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 30px;
+    background-color: #deebff;
+}
+.search-filter-icone .fas{
+    color: #0065fc;
+}
+.search-filters-text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 30px;
+    border: 1px solid #f2f2f2;
+    height: 50px;
+    margin: 0 15px;
+    color: #000;
+}
+.search-filters-text span{
+    margin: 0 auto;
+}
+.search-filters-text:hover{
+    background-color: #deebff;
+    color: #0065fc;
+}
+.search-filter-eco{
+    width: 15%;
+}
+.search-filter-familial{
+    width: 15%;
+}
+.search-filter-romantique{
+    width: 16%;
+}
+.search-filter-dog{
+    width: 16%;
+}
+
+/* Résultats */
+.search-result{
+    display: flex;
+    margin-top: 35px;
+}
+.search-result-icone{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+    border: 2px solid #f2f2f2;
+    border-radius: 30px; 
+}
+.search-result-icone .fas{
+    color: #0065fc;
+}
+.search-result-text{
+    display: flex;
+    align-items: center;
+}
+/** RESPONSIVE SECTION RECHERCHE - MOBILE **/
+@media screen and (min-width: 320px) and (max-width: 768px){
+    #search-hebergement{
+        margin-top: 20px;
     }
-    #recherche h1{
-        font-size: 21px;
-        width: 290px;
-        margin-left: 17px;
-        margin-bottom: 16px;
+
+    /* Recherche */
+    #search-hebergement h1{
+        padding-left: 6%;
+        width: 90%;
+        font-size: 22px;
     }
-    .texte-recherche{
-        font-size: 15px;
-        line-height: 16px;
-        width: 290px;
-        margin-left: 17px;
-        margin-bottom: 31px;
+    .search-text{
+        padding-left: 6%;
+        width: 90%;
     }
-    .champ-recherche{
-        margin-left: 17px;
-        height: 45px;
-        width: 334px;
+
+    /* barre de recherche */
+    .search-barre{
+        padding: 0 6%;
     }
-    /* Je masque le bouton Rechercher */
-    .bouton{
+    .search-icone-map{
+       width: 20%;
+    }
+    .search-barre-texte{
+        width: auto;
+    }
+    /* Je masque le bouton rechercher */
+    .search-button{
         display: none;
     }
-    .icone-loupe{
-        height: 51px;
-        width: 51px;
-        background-color: #0065fc;
-        color: #fff;
+    /* J'affiche l'icone loupe à la place du bouton rechercher de la barre de recherche */
+    .search-icone-loupe{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -184,347 +292,483 @@ input[type="text"]{
         border-top-right-radius: 15px;
         border-bottom-right-radius: 15px;
         cursor: pointer;
+        height: 51px;
+        width: 20%;
+        background-color: #0065fc;
+        color: #fff;
     }
-}
-/* TABLETTE */
-@media screen and (min-width: 768px) and (max-width: 991px){
-    #recherche h1{
+
+    /* Filtres */
+    .search-filters{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas:
+        "Filtres Filtres"
+        "eco fam"
+        "rom rom"
+        "dog dog";
+        margin-top: 21px;
+        padding: 0 6%;
+    }
+    .search-filters h2{
+        grid-area: Filtres;
+        font-size: 18px;
+        margin: 0;
+    }
+    .search-filter-eco{
+        grid-area: eco;
+        font-size: 12px;
+        padding: 0 11px 13px 0;
         width: auto;
     }
+    .search-filter-familial{
+        grid-area: fam;
+        font-size: 12px;
+        padding-bottom: 13px;
+        width: auto;
+    }
+    .search-filter-romantique{
+        grid-area: rom;
+        font-size: 12px;
+        width: 47%;
+    }
+    .search-filter-dog{
+        grid-area: dog;
+        font-size: 12px;
+        width: 70%;
+    }
+    .search-filters-text{
+        margin: 0;
+    }
+    .search-filters-text span{
+        margin: 0 auto;
+    }
+    
+    /* Résultats */
+    .search-result{
+        padding-left: 6%;
+    }
 }
-/************************* FILTRES *************************/
-#filtres{
+/** RESPONSIVE SECTION RECHERCHE - TABLETTE **/
+@media screen and (min-width: 769px) and (max-width: 1024px){
+    #search-hebergement{
+        margin-top: 20px;
+    }
+    
+    /* Recherche */
+    #search-hebergement h1{
+        padding-left: 6%;
+        width: 90%;
+        font-size: 22px;
+    }
+    .search-text{
+        padding-left: 6%;
+        width: 90%;
+    }
+
+    /* barre de recherche */
+    .search-barre{
+        padding: 0 6%;
+    }
+    .search-icone-map{
+        width: 10%;
+     }
+     .search-barre-texte{
+        width: auto;
+    }
+     /* Filtres */
+     .search-filters{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas:
+        "Filtres Filtres"
+        "eco fam"
+        "rom dog";
+        padding: 0 6%;
+        
+    }
+    .search-filters h2{
+        grid-area: Filtres;
+        font-size: 18px;
+        margin: 0;
+    }
+    .search-filter-eco{
+        grid-area: eco;
+        font-size: 12px;
+        padding: 0 11px 13px 0;
+        width: auto;
+    }
+    .search-filter-familial{
+        grid-area: fam;
+        font-size: 12px;
+        padding-bottom: 13px;
+        width: auto;
+    }
+    .search-filter-romantique{
+        grid-area: rom;
+        font-size: 12px;
+        padding-right: 11px;
+        width: auto;
+    }
+    .search-filter-dog{
+        grid-area: dog;
+        font-size: 12px;
+        width: auto;
+    }
+    .search-filters-text{
+        margin: 0;
+    }
+    .search-filters-text span{
+        margin: 0 auto;
+    }
+    /* Résultats */
+    .search-result{
+        padding-left: 6%;
+    }
+}
+/** RESPONSIVE SECTION RECHERCHE - GRAND ECRAN **/
+@media screen and (min-width: 1025px) and (max-width: 1500px){
+        /* barre de recherche */
+    .search-icone-map{
+        width: 6%;
+    }
+    .search-barre-texte{
+        width: auto;
+    }
+    .search-filter-eco{
+        width: 24%;
+    }
+    .search-filter-familial{
+        width: 20%;
+    }
+    .search-filter-romantique{
+        width: 20%;
+    }
+    .search-filter-dog{
+        width: 22%;
+    }
+}
+/***********************************************************************/
+/************************* SECTION HEBERGEMENT *************************/
+#hebergements{
     display: flex;
-    margin-top: 30px;
-}
-.titre-filtres{
-    font-size: 16px;
-    margin-right: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.filtre-economique, .filtre-familial, .filtre-romantique, .filtre-dog{
-    display: flex;
-    margin-right: 24px;
-    border: 1px solid #f2f2f2;
-    border-radius: 30px;
-}
-.filtre-economique:hover, .filtre-familial:hover, .filtre-romantique:hover, .filtre-dog:hover{
-    background-color: #deebff;
-    color: blue;
-    cursor: pointer;
-}
-.economique, .familial, .romantique, .dog{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-}
-.economique{
-    width: 144px;
-}
-.familial{
-    width: 102px;
-}
-.romantique{
-    width: 134px;
-}
-.dog{
-    width: 192px;
-}
-.text{
-    text-decoration: none;
-    color: #000;
-}
-.icone{
-    width: 50px;
-    height: 50px;
-    border-radius: 30px;
-    background-color: #deebff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-/************************* RESPONSIVE *************************/
-/************************** FILTRES ***************************/
-/* Maquette Iphone8 */
-@media screen and (min-width: 375px) and (max-width: 375px){
-    #filtres{
-        flex-flow: row wrap;
-    }
-    .titre-filtres{
-        position: absolute;
-        margin-left: 18px;
-        margin-bottom: 18px;
-        margin-right: 0;
-    }
-    .filtre-economique, .filtre-familial, .filtre-romantique, .filtre-dog{
-        margin-right: 0;
-        margin-bottom: 13px;
-    }
-    .filtre-economique{
-        position: absolute;
-        z-index: 1;
-        margin-top: 37px;
-        margin-right: 11px;
-        margin-left: 17px;
-    }
-    .economique{
-        width: 127px;
-    }
-    .filtre-familial{
-        position: relative;
-        z-index: 2;
-        margin-top: 37px;
-        margin-left: 201px;
-    }
-    .familial{
-        width: 90px;
-    }
-    .filtre-romantique{
-        position: relative;
-        margin-left: 17px;
-    }
-    .romantique{
-        width: 120px;
-    }
-    .filtre-dog{
-        margin-left: 17px;
-    }
-    .dog{
-        width: 171px;
-    }
-}
-/************************* RESULTATS *************************/
-#resultats{
-    margin-top: 35px;
-    margin-bottom: 35px;
-    display: flex;
-}
-.icone-resultat{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 24px;
-    height: 24px;
-    margin-right: 12px;
-    border: 2px solid #f2f2f2;
-    border-radius: 30px;
-}
-.texte-resultat{
-    display: flex;
-    align-items: center;
-}
-/************************* RESPONSIVE *************************/
-/************************** RESULTATS ***************************/
-/* Maquette Iphone8 */
-@media screen and (min-width: 375px) and (max-width: 375px){
-    #resultats{
-       margin: 30px 0 40px 17px;
-    }
-}
-/************************* HEBERGEMENT *************************/
-#glogal{
-    display: flex;
+    justify-content: space-between;
 }
 #hebergement{
-    width: 880px;
+    display: flex;
+    flex-direction: column;
+    width: 65%;
     height: 626px;
     background-color: #f2f2f2;
-    padding: 0px 40px;
-    margin-right: 40px;
     border-radius: 15px;
+    padding: 0 40px;
+    margin: 37px 40px 0 0;
 }
-.ligne1, .ligne2, .ligne3{
+.hebergement-cards-line1, .hebergement-cards-line2{
     display: flex;
+    justify-content: space-between;
 }
-.ligne1 .carte{
-    margin-top: 23px;
-    margin-right: 30px;
+.hebergement-card{
     background-color: #fff;
     border-radius: 15px;
     padding: 5px;
 }
-.ligne1 .carte-mouettes{
-    margin-top: 23px;
-    background-color: #fff;
-    border-radius: 15px;
-    padding: 5px;
-}
-.ligne2 .carte{
-    margin-top: 30px;
-    margin-right: 30px;
-    background-color: #fff;
-    border-radius: 15px;
-    padding: 5px;
-}
-.ligne2 .carte-amina{
-    margin-top: 30px;
-    background-color: #fff;
-    border-radius: 15px;
-    padding: 5px;
-}
-.img-hebergement img{
+.hebergement-img img{
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     margin-bottom: 12px;
 }
-.ligne3{
-    margin-top: 44px;
-    margin-bottom: 46px;
-    cursor: pointer;
+.hebergement-cards-line1, .hebergement-cards-line2{
+    margin-bottom: 30px;
 }
-#hebergement .titre{
-    margin-top: 47px;
+.hebergement-cards-line3 a{
+    text-decoration: none;
     font-weight: bold;
+    color: #000;
 }
-.ligne3 .afficher-plus{
-    font-weight: bold;
+.hebergement-cards-line3 a:hover{
+    color: #0065fc;
 }
-.carte .carte-texte, .carte-amina .carte-texte, .carte-mouettes .carte-texte {
-    margin-left: 16px;
-    font-size: 12px; 
+.hebergement h2{
+    font-size: 16px;
+    margin: 47px 0 23px 0;
 }
-.carte p, .carte-amina p, .carte-mouettes p{
-    margin-top: 7px;
+.hebergement-card-text, .hebergement-card-notation{
+    margin: 8px 0 0 16px;
+    width: auto;
     font-size: 12px;
 }
-.carte .notation, .carte-amina .notation, .carte-mouettes .notation{
-    margin-top: 8px;
-    margin-left: 16px;
-    font-size: 12px; 
+.etoile-bleue{
+    color: #0065fc;
 }
+.etoile-grise{
+    color: #f2f2f2;
+}
+
 /* Les plus populaires */
-#populaire{
-    width: 420px;
+#hebergement-pop{
+    display: flex;
+    flex-direction: column;
+    width: 38%;
     height: 626px;
     background-color: #f2f2f2;
-    padding: 0px 40px;
     border-radius: 15px;
+    padding: 0 40px;
+    margin-top: 37px;
 }
-.carte-pop{
+.hebergement-pop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* .hebergements-pop-col{
+    display: flex;
+    flex-direction: column;
+} */
+.hebergement-pop-card{
     display: flex;
     background-color: #fff;
     border-radius: 15px;
     padding: 5px;
-    margin-top: 23px;
-    margin-bottom: 33px;
+    margin-bottom: 23px;
 }
-.carte-pop-bleu-blanc{
-    display: flex;
-    background-color: #fff;
-    border-radius: 15px;
-    padding: 5px;
-    margin-bottom: 33px;
-}
-.img-pop img{
+.hebergement-pop-img img{
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     margin-right: 22px;
 }
-.carte-pop-info .carte-texte-info{
+.hebergement-pop-card-text, .hebergement-pop-card-notation{
     margin-top: 19px;
-    width: 134px;
+    width: auto;
     font-size: 12px;
 }
-.carte-pop-info p{
-    margin-top: 13px;
+.hebergement-pop h2{
+    font-size: 16px;
+    margin: 47px 0 23px 0;
 }
-.carte-pop-info .notation{
-    margin-top: 43px;
-    font-size: 12px;
-}
-#populaire .titre{
-    display: flex;
-    justify-content: space-between;
-}
-.titre .titre-texte{
-    margin-top: 47px;
-    font-weight: bold;
-}
-.titre .icone{
-    background-color: #f2f2f2;
-    margin-top: 46px;
-    width: 19px;
-    height: 19px;
-    display: flex;
-}
-/************************* RESPONSIVE *************************/
-/************************** HEBERGEMENTS ***************************/
-/************************** LES + POPULAIRES ***************************/
-/* Maquette Iphone8 */
-@media screen and (min-width: 375px) and (max-width: 375px){
-    #glogal{
+/** RESPONSIVE SECTION HEBERGEMENT - MOBILE **/
+@media screen and (min-width: 320px) and (max-width: 768px){
+    #hebergements{
         flex-direction: column;
-    }
-    #populaire{
-        order: -1;
-        background-color: #f2f2f2;
-        width: 100%;
-        padding: 0;
-        border-radius: 0;
-        margin: 0;
-    }
-    .carte-pop{
-        margin: 0 21px 11px 17px;
-    }
-    .carte-pop-bleu-blanc{
-        margin: 0 21px 37px 17px;
-    }
-    .img-pop img{
-        margin-right: 22px;
-    }
-    .titre .titre-texte{
-        margin: 43px 0 26px 17px;
-    }
-    .titre .icone{
-        margin: 43px 20px 26px 0px;
     }
     #hebergement{
-        background-color: #fff;
-        width: 100%;
-        padding: 0;
-        border-radius: 0;
-        margin: 0;
-    }
-    .ligne1, .ligne2, .ligne3{
-        flex-direction: column;
-    }
-    #hebergement .titre{
-        margin: 43px 0 24px 17px;
-    }
-    .ligne1 .carte, .ligne1 .carte-mouettes, .ligne2 .carte, .ligne2 .carte-amina{
-        margin: 0 20px 12px 17px;
         width: auto;
+        height: auto;
+        border-radius: 0;
+        padding: 0;
+        padding: 0 6%;
+        margin: 0;
+        background-color: #fff;
     }
-    .img-hebergement img{
-        width: 325px;
-        height: 114px;
+    .hebergement-card{
+        margin-right: 0;
+        width: 100%;
+        margin-bottom: 17px;
+        box-shadow: 7px 9px 19px -6px rgba(0,0,0,0.53);
+        -webkit-box-shadow: 7px 9px 19px -6px rgba(0,0,0,0.53);
+        -moz-box-shadow: 7px 9px 19px -6px rgba(0,0,0,0.53);
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
     }
-    .ligne3{
-        margin: 34px 0 61px 17px;
+    .hebergement-cards-line1, .hebergement-cards-line2{
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    .hebergement-img img{
+        width: 100%;
+    }
+    .hebergement-card-text, .hebergement-card-notation{
+        margin: 4px 0 5px 16px;
+        width: 100%;
+    }
+    .hebergement h2{
+        margin: 23px 0 23px 0;
+    }
+
+    /* Les plus populaires */
+    #hebergement-pop{
+        width: auto;
+        height: auto;
+        order: -1;
+        border-radius: 0;
+        padding: 0 6%;
+    }
+    .hebergement-pop-img img{
+        width: 100%;
+    }
+    .hebergement-pop h2{
+        margin: 23px 0 23px 0;
+    }
+    .hebergement-pop-card-text, .hebergement-pop-card-notation{
+        margin: 19px 0 0 22px;
+        width: auto;
+        font-size: 12px;
     }
 }
-/************************* ACTIVITES *************************/
+/** RESPONSIVE SECTION HEBERGEMENT - TABLETTE **/
+@media screen and (min-width: 769px) and (max-width: 1024px){
+    #hebergements{
+        flex-direction: column;
+    }
+    #hebergement{
+        width: auto;
+        height: auto;
+        border-radius: 0;
+        padding: 0;
+        padding: 0 6%;
+        margin: 0;
+        background-color: #fff;
+    }
+    .hebergement-card{
+        margin-right: 0;
+        width: 100%;
+        margin-bottom: 17px;
+        box-shadow: 7px 9px 19px -6px rgba(0,0,0,0.53);
+        -webkit-box-shadow: 7px 9px 19px -6px rgba(0,0,0,0.53);
+        -moz-box-shadow: 7px 9px 19px -6px rgba(0,0,0,0.53);
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+    .hebergement-cards-line1, .hebergement-cards-line2{
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    .hebergement-img img{
+        width: 100%;
+    }
+    .hebergement-card-text, .hebergement-card-notation{
+        margin: 4px 0 5px 16px;
+        width: 100%;
+    }
+    .hebergement h2{
+        margin: 23px 0 23px 0;
+    }
+
+    /* Les plus populaires */
+    #hebergement-pop{
+        width: auto;
+        height: auto;
+        order: -1;
+        border-radius: 0;
+        padding: 0 6%;
+    }
+    .hebergement-pop-card{
+        display: block;
+    }
+
+    .hebergement-pop-img img{
+        width: 100%;
+        height: 100%;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+    .hebergement-pop h2{
+        margin: 23px 0 23px 0;
+    }
+    .hebergement-pop-card-text, .hebergement-pop-card-notation{
+        margin: 19px 0 0 22px;
+        width: auto;
+        font-size: 12px;
+    }
+}
+/** RESPONSIVE SECTION RECHERCHE - GRAND ECRAN **/
+@media screen and (min-width: 1025px) and (max-width: 1500px){
+    #hebergements{
+        flex-direction: column;
+    }
+    #hebergement{
+        width: auto;
+        height: auto;
+        border-radius: 0;
+        padding: 0;
+        padding: 0 6%;
+        margin: 0;
+        background-color: #fff;
+    }
+    .hebergement-card{
+        margin-right: 0;
+        width: 100%;
+        margin-bottom: 17px;
+        box-shadow: 7px 9px 19px -6px rgba(0,0,0,0.53);
+        -webkit-box-shadow: 7px 9px 19px -6px rgba(0,0,0,0.53);
+        -moz-box-shadow: 7px 9px 19px -6px rgba(0,0,0,0.53);
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+    .hebergement-cards-line1, .hebergement-cards-line2{
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    .hebergement-img img{
+        width: 100%;
+    }
+    .hebergement-card-text, .hebergement-card-notation{
+        margin: 4px 0 5px 16px;
+        width: 100%;
+    }
+    .hebergement h2{
+        margin: 23px 0 23px 0;
+    }
+
+    /* Les plus populaires */
+    #hebergement-pop{
+        width: auto;
+        height: auto;
+        order: -1;
+        border-radius: 0;
+        padding: 0 6%;
+    }
+    .hebergement-pop-card{
+        display: block;
+    }
+    .hebergement-pop-img img{
+        width: 100%;
+        height: 100%;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+    .hebergement-pop h2{
+        margin: 23px 0 23px 0;
+    }
+    .hebergement-pop-card-text, .hebergement-pop-card-notation{
+        margin: 19px 0 0 22px;
+        width: auto;
+        font-size: 12px;
+    }
+}
+/*********************************************************************************/
+/************************* SECTION ACTIVITES A MARSEILLE *************************/
 #activites{
     height: 446px;
-    width: 1340px;
+    width: 100%;
 }
 .activites-marseille{
     display: flex;
+    justify-content: space-between;
 }
-.block1{
-    display: flex;
-    margin-right: 41px;
-}
-.block1 .vieux-port, .block2 .calanques{
-    margin-right: 43px;
-}
-.block2{
+.card1{
     display: flex;
 }
-.pomegues-frioul, .lagarde-longchamp{
+.card2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card3{
+    display: flex;
+}
+.card4{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -551,94 +795,20 @@ input[type="text"]{
     margin-bottom: 27px;
     font-weight: bold;
 }
-/************************* RESPONSIVE *************************/
-/************************** ACTIVITES ***************************/
-/* Maquette Iphone8 */
-@media screen and (min-width: 375px) and (max-width: 375px){
-    #activites{
-        margin-top: 830px;
-        width: 100%;
-    }
+/** RESPONSIVE SECTION ACTIVITES A MARSEILLE - MOBILE **/
+@media screen and (min-width: 320px) and (max-width: 768px){
     .activites-marseille{
         flex-direction: column;
     }
     .img-marseille img{
-        width: 334px;
-        height: 134px;
+        width: auto;
     }
-    .block1, .block2{
-        flex-direction: column;
-        margin-left: 21px;
-        margin-right: 20px;
-    }
-    .block1 .vieux-port, .block2 .calanques{
-        margin-right: 0;
-    }
-    .vieux-port, .pomegues, .frioul, .calanques, .lagarde{
-        margin-bottom: 24px;
-    }
-    .longchamp{
-        margin-bottom: 49px;
+    .vieux-port-img{
+        image-orientation: landscape;
     }
     #activites .titre{
-        margin-left: 17px;
-    }
-}
-/************************* FOOTER *************************/
-footer{
-    display: flex;
-    background-color: #f2f2f2;
-}
-.a-propos, .nos-hebergements, .assistance{
-    margin: 49px 0 37px 0;
-}
-.a-propos{
-    margin-left: 50px;
-    margin-right: 228px;
-}
-.nos-hebergements{
-    margin-right: 292px;
-}
-.a-propos .titre, .nos-hebergements .titre, .assistance .titre{
-    font-weight: bold;
-}
-.a-propos li, .nos-hebergements li, .assistance li{
-    list-style-type: none;
-    margin: 28px 0 18px 0;
-}
-.a-propos a, .nos-hebergements a, .assistance a{
-    text-decoration: none;
-    color: #000;
-}
-.a-propos a:hover, .nos-hebergements a:hover, .assistance a:hover{
-    text-decoration: none;
-    font-weight: bold;
-    color: #0065fc;
-}
-/************************* RESPONSIVE *************************/
-/************************** FOOTER ***************************/
-/* Maquette Iphone8 */
-@media screen and (min-width: 375px) and (max-width: 375px){
-    footer{
-        margin-top: 937px;
-        flex-direction: column;
-    }
-    .a-propos{
-        margin: 50px 0 31px 17px;
-    }
-    .a-propos li{
-        margin-top: 23px;
-    }
-    .nos-hebergements{
-        margin: 17px 0 49px 17px;
-    }
-    .nos-hebergements a{
-        margin-top: 19px;
-    }
-    .assistance{
-        margin: 10px 0 49px 17px;
-    }
-    .assistance a{
-        margin-top: 19px;
+        margin-top: 33px;
+        margin-bottom: 27px;
+        font-weight: bold;
     }
 }
