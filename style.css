@@ -269,13 +269,13 @@ input[type="text"]{
 .hebergement-afficher a:hover{
     color: #0065fc;
 }
-
 /* Les plus populaires */
 .hebergements-pop{
     display: flex;
     flex-direction: column;
     background-color: #f2f2f2;
-    width: auto;
+    /* width: auto; */
+    width: 40%;
     height: 626px;
     padding: 0 40px;
     margin-top: 37px;
@@ -380,11 +380,9 @@ input[type="text"]{
     height: 200px;
     width: auto;
     margin: 0 50px;
-    overflow: hidden;
 }
 .footer-blocs h4{
     margin-bottom: 5px;
-    overflow: hidden;
 }
 .footer-bloc-contenu{
     display: flex;
@@ -450,7 +448,12 @@ input[type="text"]{
     }
     .activite-contenu img{
         width: 100%;
-    } 
+    }
+/*************************/
+/***** PIED DE PAGE *****/
+    .footer-blocs{
+        height: auto;
+    }
 }
 @media screen and (max-width: 917px){
     /***** SECTION HEBERGEMENT *****/
