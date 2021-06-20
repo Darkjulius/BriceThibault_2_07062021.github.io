@@ -182,6 +182,11 @@ input[type="text"]{
 .search-filter-dog{
     width: 250px;
 }
+/* .search-filter-eco a:hover{
+    background-color: #deebff;
+    font-weight: bold;
+} */
+
 .search-filters-text span{
     margin: 0 auto;
 }
@@ -245,6 +250,7 @@ input[type="text"]{
     background-color: #fff;
     border-radius: 15px;
     padding: 5px;
+    width: 18vw;
 }
 .hebergement-img img{
     object-fit: cover;
@@ -253,12 +259,12 @@ input[type="text"]{
     margin-bottom: 12px;
 }
 .photo-heb{
-    width: 236px;
+    width: 100%;
     height: 114px;
 }
 .hebergement-card-text, .hebergement-card-notation{
     margin: 8px 0 0 16px;
-    width: auto;
+    width: 100%;
     font-size: 12px;
 }
 .hebergement-afficher a{
@@ -334,10 +340,11 @@ input[type="text"]{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    width: 100%;
     margin-right: 43px;
 }
 .activite-contenu img{
-    width: 302px;
+    width: 100%;
     object-fit: cover;
 }
 .img-act-marseille img{
@@ -432,6 +439,12 @@ input[type="text"]{
     .hebergement-cards{
         justify-content: space-between;
     }
+    .hebergement-card{
+        /* background-color: #fff;
+        border-radius: 15px;
+        padding: 5px; */
+        width: 100%;
+    }
     .hebergement-card-text, .hebergement-card-notation{
         width: 100%;
     }
@@ -524,3 +537,8 @@ input[type="text"]{
         
     }
 }
+
+
+
+
+
