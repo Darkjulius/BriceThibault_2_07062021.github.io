@@ -1,16 +1,20 @@
-**Projet 2 : transformer une maquette en site web**
+# Projet 2 du parcours Développeur web d'OpenClassrooms : Transformer une maquette en site web
+***
+### Compétences évaluées :
+* Présentation du code réalisé et le rendu visuel du site.
 
-**Présentation de Reservia**
+## Objectifs
+1. Développer un site proposant le menu de 4 grands restaurants parisiens.
+2. Permettre la réservation en ligne et la composition de menus.
 
+## Présentation de Reservia
 Reservia est une petite entreprise qui propose à ses usagers de trouver des hébergements et des activités dans la ville de leur choix.
 
-Éléments à disposition : 
-- la maquette desktop et mobile du site.
-- les images du site avec différents formats.
+## Éléments à disposition
+* La maquette desktop et mobile du site.
+* Les images du site avec différents formats.
 
-
-Contraintes
-
+## Contraintes
 * Le site doit se faire en HTML et CSS sans frameworks.
 * Les icônes proviennent de Font Awesome.
 * Couleurs utilisées : bleu #0065FC, bleu clair #DEEBFF et gris #F2F2F2.
@@ -20,9 +24,7 @@ Contraintes
 * Les images doivent être de taille adéquate afin qu'elles impactent le moins possible le temps de chargement de la page.
 * Le code doit être versionné avec Git et doit avoir un repository distant sur Github ou Gitlab.
 
-
-Fonctionnalités
-
+## Fonctionnalités
 * Le champ de recherche doit être un champ de saisie.
 * Chaque carte d’hébergement ou d’activité est cliquable dans son intégralité.
 * Les filtres, bien que non fonctionnels, changent de style au survol.
